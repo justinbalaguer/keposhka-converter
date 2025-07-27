@@ -3,7 +3,7 @@ import Image from "next/image"
 import { useState } from "react"
 
 export default function Letters() {
-  const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+  const [numbers, setNumbers] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
   const [letters, setLetters] = useState([
     "a",
     "b",
@@ -115,30 +115,27 @@ export default function Letters() {
 
   return (
     <div className="lg:mx-5 overflow-x-hidden">
-      <div className="flex justify-center items-center my-5 font-bold text-white text-xl lg:text-3xl">
-        <h1>Keposhka Converter</h1>
-      </div>
-      <div className="text-white text-xl lg:text-3xl overflow-auto whitespace-pre-line flex flex-row justify-center items-center w-full my-5">
-        <p className="w-full rounded h-auto border-2 border-gray-500 p-5 break-words">
+      <div className="text-white text-3xl overflow-auto whitespace-pre-line flex flex-row justify-center items-center w-full my-5">
+        <p className="w-full rounded h-auto border-2 p-5 break-words">
           {selectedLetters.join("") || <span className="text-gray-500">Converted letters</span>}
         </p>
       </div>
-      <div className="flex flex-row flex-wrap justify-center items-center gap-1 lg:gap-3 my-3">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-3 my-3">
         {numbers.map((number, index) => (
-          <div className="text-2xl lg:text-6xl text-[#8b1214] font-bold cursor-pointer px-2 lg:px-3 lg:py-1 rounded bg-[#121212] hover:bg-[#181818] hover:scale-105 duration-300 active:scale-95" key={index} onClick={() => handleSelectLetter(number)}>
+          <div className="text-6xl text-red-800 font-bold cursor-pointer px-3 py-1 rounded bg-[#121212] hover:bg-[#181818] hover:scale-105 duration-300 active:scale-95" key={index} onClick={() => handleSelectLetter(number)}>
             <p>{number}</p>
           </div>
         ))}
       </div>
-      <div className="flex flex-row flex-wrap justify-center items-center gap-1 lg:gap-3">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-3">
         { letters.sort().map((letter, index) => (
           <div className="cursor-pointer p-3 rounded bg-[#121212] hover:bg-[#181818] hover:scale-105 duration-300 active:scale-95" key={index} onClick={() => handleSelectLetter(letter)}>
-            <Image className="w-5 h-5 lg:w-10 lg:h-10" src={`/assets/${letter}.png`} alt={letter} width={50} height={50} />
+            <Image src={`/assets/${letter}.png`} alt={letter} width={50} height={50} />
           </div>
         ))}
       </div>
       <div className="my-5 flex justify-center items-center">
-        <div className="text-[#8b1214] font-bold text-xl lg:text-3xl flex justify-center items-center cursor-pointer p-3 rounded bg-[#121212] hover:bg-[#181818] hover:scale-105 duration-300 active:scale-95 w-[80%]" onClick={() => handleSelectLetter(" ")}>
+        <div className="text-red-800 font-bold text-3xl flex justify-center items-center cursor-pointer p-3 rounded bg-[#121212] hover:bg-[#181818] hover:scale-105 duration-300 active:scale-95 w-[80%]" onClick={() => handleSelectLetter(" ")}>
           <p>Space</p>
         </div>
       </div>
