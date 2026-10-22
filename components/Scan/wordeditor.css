@@ -1,0 +1,155 @@
+.kp-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--kp-accent-strong);
+  border-radius: 18px;
+  background: var(--kp-surface);
+}
+
+.kp-edit header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.kp-edit header button,
+.kp-edit-more button {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--kp-muted);
+}
+
+.kp-edit-reason {
+  color: #fbbf24;
+  font-size: 14px;
+}
+
+.kp-edit-crop {
+  width: 100%;
+  max-height: 160px;
+  border-radius: 12px;
+  border: 1px solid var(--kp-border);
+  background-repeat: no-repeat;
+  background-color: #000;
+  margin: 0 auto;
+}
+
+.kp-edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--kp-muted);
+  font-size: 13px;
+}
+
+.kp-edit-field input {
+  min-height: 52px;
+  padding: 0 14px;
+  border: 1px solid var(--kp-border);
+  border-radius: 12px;
+  background: var(--kp-bg);
+  color: var(--kp-text);
+  font-size: 22px;
+}
+
+.kp-edit-sugg,
+.kp-edit-alts,
+.kp-edit-glyphs > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.kp-edit-sugg > span,
+.kp-edit-glyphs > span {
+  color: var(--kp-muted);
+  font-size: 13px;
+}
+
+.kp-edit-glyphs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kp-edit-sugg button,
+.kp-edit-glyphs button {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--kp-border);
+  border-radius: 12px;
+  background: var(--kp-surface-2);
+  color: var(--kp-text);
+  font-size: 16px;
+}
+
+.kp-edit-glyphs button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 52px;
+}
+
+.kp-edit-glyphs button[data-open="true"] {
+  border-color: var(--kp-accent);
+}
+
+.kp-edit-glyphs img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.kp-edit-glyphs small {
+  color: var(--kp-muted);
+  font-size: 12px;
+}
+
+.kp-edit-alts {
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--kp-bg);
+}
+
+.kp-edit-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.kp-edit-nav button {
+  flex: 1;
+  min-height: 48px;
+  border: 1px solid var(--kp-border);
+  border-radius: 14px;
+  background: var(--kp-surface-2);
+  color: var(--kp-text);
+  font-weight: 600;
+}
+
+.kp-edit-nav button:disabled {
+  opacity: 0.4;
+}
+
+.kp-edit-nav .kp-edit-ok {
+  flex: 2;
+  border-color: var(--kp-accent-strong);
+  background: var(--kp-accent-strong);
+  color: #fff;
+}
+
+.kp-edit-more {
+  display: flex;
+  justify-content: space-between;
+}
+
+.kp-edit-more .kp-edit-danger {
+  color: var(--kp-accent);
+}

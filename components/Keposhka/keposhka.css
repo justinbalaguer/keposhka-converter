@@ -1,0 +1,68 @@
+.kp-enc {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kp-enc-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--kp-border);
+  border-radius: 16px;
+  background: var(--kp-surface);
+  color: var(--kp-text);
+  font: inherit;
+  font-size: 16px; /* 16px stops iOS zooming on focus */
+  resize: none;
+}
+
+.kp-enc-input:focus {
+  outline: none;
+  border-color: var(--kp-accent);
+}
+
+.kp-enc-preview {
+  min-height: 160px;
+  border: 1px solid var(--kp-border);
+  border-radius: 16px;
+  background: #000;
+  overflow: hidden;
+}
+
+.kp-enc-preview canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.kp-enc-empty {
+  padding: 64px 16px;
+  text-align: center;
+  color: var(--kp-muted);
+}
+
+.kp-enc-bar {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 12px;
+}
+
+.kp-enc-btn {
+  flex: 1;
+  height: 52px;
+  border: 1px solid var(--kp-border);
+  border-radius: 14px;
+  background: var(--kp-surface-2);
+  color: var(--kp-text);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.kp-enc-btn:disabled {
+  opacity: 0.4;
+}
+
+.kp-enc-primary {
+  border-color: var(--kp-accent-strong);
+  background: var(--kp-accent-strong);
+}

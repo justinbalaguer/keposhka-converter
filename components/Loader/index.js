@@ -18,7 +18,7 @@ export default function Loader() {
   return (
     <div>
       {loading && (
-        <div className="w-full h-full mx-auto fixed top-0 left-0 flex justify-center items-center bg-black">
+        <div className="w-full h-dvh mx-auto fixed top-0 left-0 z-[100] flex justify-center items-center bg-black">
           <Image className="animate-spin [animation-duration:10s]" src="/mcr.png" alt="MCR" width={300} height={300} />
         </div>
       )}

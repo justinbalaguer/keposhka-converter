@@ -1,0 +1,123 @@
+.kp-dec-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 4px 0 12px;
+  background: linear-gradient(var(--kp-bg) 80%, transparent);
+}
+
+.kp-dec-out {
+  position: relative;
+  min-height: 96px;
+  padding: 16px 16px 40px;
+  border: 1px solid var(--kp-border);
+  border-radius: 18px;
+  background: var(--kp-surface);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.kp-dec-hint {
+  color: var(--kp-muted);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.kp-dec-clear {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--kp-surface-2);
+  color: var(--kp-muted);
+  font-size: 12px;
+}
+
+.kp-dec-nums {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.kp-dec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: 8px;
+}
+
+.kp-dec-key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--kp-border);
+  border-radius: 12px;
+  background: var(--kp-surface);
+  color: var(--kp-accent);
+  transition: transform 80ms, background 80ms, border-color 80ms;
+}
+
+.kp-dec-key:active {
+  transform: scale(0.93);
+  border-color: var(--kp-accent);
+  background: var(--kp-surface-2);
+}
+
+.kp-dec-key img {
+  width: 58%;
+  height: 58%;
+  object-fit: contain;
+}
+
+.kp-dec-num {
+  aspect-ratio: auto;
+  height: 44px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.kp-dec-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 16px 0 calc(12px + env(safe-area-inset-bottom));
+  background: linear-gradient(transparent, var(--kp-bg) 30%);
+}
+
+.kp-dec-act {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  border: 1px solid var(--kp-border);
+  border-radius: 14px;
+  background: var(--kp-surface-2);
+  color: var(--kp-text);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.kp-dec-act:active {
+  transform: scale(0.97);
+}
+
+.kp-dec-copy {
+  border-color: var(--kp-accent-strong);
+  background: var(--kp-accent-strong);
+}
+
+.kp-dec-copy:disabled {
+  opacity: 0.4;
+}

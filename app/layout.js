@@ -14,7 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Keposhka Converter",
-  description: "Keposhka Converter",
+  description: "Decode and write Keposhka, the My Chemical Romance glyph language, right from your phone.",
+};
+
+export const viewport = {
+  themeColor: "#08080a",
 };
 
 export default function RootLayout({ children }) {

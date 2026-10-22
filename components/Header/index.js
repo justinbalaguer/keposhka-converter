@@ -1,44 +1,56 @@
 "use client"
-import { useState } from "react"
-import { Letters, Keposhka } from "@/components"
+import Image from "next/image"
+import { useCallback, useState } from "react"
+import { Letters, Keposhka, Scan, Drawer } from "@/components"
+import Icon from "@/components/Drawer/icons"
+import { MODES } from "./modes"
+import "./header.css"
 
 export default function Header() {
-  const [active, setActive] = useState("keposhka")
+  const [active, setActive] = useState("decode")
+  const [open, setOpen] = useState(false)
+  const close = useCallback(() => setOpen(false), [])
+  const mode = MODES.find((m) => m.id === active)
 
   return (
-    <div>
-      <div className="flex justify-around items-center my-5 font-bold text-white text-sm lg:text-xl border border-red-500/20 rounded-full mx-2 p-1">
-        <button
-          className={`${active === "keposhka" ? "bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/25 px-3 py-1" : "px-3 py-1"} flex justify-center items-center gap-2 rounded-full`}
-          onClick={() => setActive("keposhka")}
-        >
-          <span>
-            Keposhka
-          </span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-4">
-            <path fillRule="evenodd" d="M2 8c0 .414.336.75.75.75h8.69l-1.22 1.22a.75.75 0 1 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5a.75.75 0 1 0-1.06 1.06l1.22 1.22H2.75A.75.75 0 0 0 2 8Z" clipRule="evenodd" />
-          </svg>
-          <span>
-            English
-          </span>
-        </button>
-        <button
-          className={`${active === "english" ? "bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/25 px-3 py-1" : "px-3 py-1"} flex justify-center items-center gap-2 rounded-full`}
-          onClick={() => setActive("english")}
-        >
-          <span>
-            English
-          </span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-4">
-            <path fillRule="evenodd" d="M2 8c0 .414.336.75.75.75h8.69l-1.22 1.22a.75.75 0 1 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5a.75.75 0 1 0-1.06 1.06l1.22 1.22H2.75A.75.75 0 0 0 2 8Z" clipRule="evenodd" />
-          </svg>
-          <span>
-            Keposhka
-          </span>
-        </button>
-      </div>
-      {active === "keposhka" && <Letters />}
-      {active === "english" && <Keposhka />}
-    </div>
-  );
+    <>
+      <header className="kp-head">
+        <div className="kp-head-bar">
+          <div className="kp-head-brand">
+            <Image src="/mcr.png" alt="" width={28} height={28} />
+            <h1>Keposhka</h1>
+          </div>
+          <button className="kp-head-burger" onClick={() => setOpen(true)} aria-label="Open menu" aria-expanded={open}>
+            <Icon name="menu" />
+          </button>
+        </div>
+        <div className="kp-head-mode">
+          <h2>{mode.title}</h2>
+          <p>{mode.hint}</p>
+        </div>
+      </header>
+
+      <Drawer
+        open={open}
+        onClose={close}
+        modes={MODES}
+        active={active}
+        onPick={(id) => {
+          setActive(id)
+          close()
+        }}
+      />
+
+      {/* Every tool stays mounted so typed text and scan results survive switching. */}
+      <section hidden={active !== "decode"}>
+        <Letters />
+      </section>
+      <section hidden={active !== "scan"}>
+        <Scan />
+      </section>
+      <section hidden={active !== "encode"}>
+        <Keposhka />
+      </section>
+    </>
+  )
 }

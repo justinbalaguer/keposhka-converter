@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: dark;
+  --kp-bg: #08080a;
+  --kp-surface: #111115;
+  --kp-surface-2: #1a1a20;
+  --kp-border: #25252c;
+  --kp-text: #f4f4f5;
+  --kp-muted: #8b8b95;
+  --kp-accent: #ef4444;
+  --kp-accent-strong: #dc2626;
+}
+
 body {
-  background-color: black;
+  background-color: var(--kp-bg);
+  color: var(--kp-text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  touch-action: manipulation;
+  cursor: pointer;
 }

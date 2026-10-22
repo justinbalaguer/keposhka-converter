@@ -1,0 +1,61 @@
+.kp-head {
+  padding: 0 0 12px;
+}
+
+.kp-head-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -16px;
+  padding: 12px 16px;
+  background: rgba(8, 8, 10, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--kp-border);
+}
+
+.kp-head-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kp-head-brand h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #ff6164, #e8000f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.kp-head-burger {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--kp-border);
+  border-radius: 14px;
+  background: var(--kp-surface);
+  color: var(--kp-text);
+}
+
+.kp-head-mode {
+  padding-top: 18px;
+}
+
+.kp-head-mode h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.kp-head-mode p {
+  margin-top: 4px;
+  color: var(--kp-muted);
+  font-size: 14px;
+  line-height: 1.4;
+}

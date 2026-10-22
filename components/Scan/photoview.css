@@ -1,0 +1,34 @@
+.kp-photo {
+  position: relative;
+  width: min(100%, calc(60vh * var(--ar)));
+  margin: 0 auto;
+  aspect-ratio: var(--ar);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--kp-border);
+}
+
+.kp-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.kp-photo-box {
+  position: absolute;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  background: transparent;
+}
+
+.kp-photo-box[data-state="check"] {
+  border: 2px dashed #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+}
+
+.kp-photo-box[data-state="selected"] {
+  border: 2px solid var(--kp-accent);
+  background: rgba(255, 97, 100, 0.22);
+  z-index: 1;
+}
